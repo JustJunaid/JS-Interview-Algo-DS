@@ -9,16 +9,18 @@
 //   fib(4) === 3
 
 // Iterative soln
-const fib = (n) => {
-  let arr = [0, 1]
-  for (let i = 1; i < n; i++) {
-    arr = [...arr, arr[i - 1] + arr[i]]
-  }
-  return arr[n]
-}
+// const fib = (n) => {
+//   let arr = [0, 1]
+//   for (let i = 1; i < n; i++) {
+//     arr = [...arr, arr[i - 1] + arr[i]]
+//   }
+//   return arr[n]
+// }
 
 // Recursive soln
 function fib(n) {
   if (n < 2) return n
   return fib(n - 2) + fib(n - 1)
 }
+
+module.exports = fib
