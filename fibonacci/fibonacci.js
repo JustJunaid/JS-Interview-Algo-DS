@@ -18,9 +18,22 @@
 // }
 
 // Recursive soln
-function fib(n) {
-  if (n < 2) return n
-  return fib(n - 2) + fib(n - 1)
+let fib = (n) => {
+	if (n < 2) return n
+	return fib(n - 2) + fib(n - 1)
 }
+
+const memoize = (fn) => {
+	let cacheObj = {}
+	return (...args) => {
+		if (cacheObj[args]) cacheObj[args]
+		return fn.apply(this, args)
+		// return fn(args)
+	}
+}
+
+fib = memoize(fib)
+
+console.log('fib', fib(30))
 
 module.exports = fib
