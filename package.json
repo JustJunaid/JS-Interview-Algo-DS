@@ -1,8 +1,8 @@
 {
-  "scripts": {
-    "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^26.0.1"
-  }
+	"scripts": {
+		"test": "jest"
+	},
+	"devDependencies": {
+		"jest": "^26.1.0"
+	}
 }
