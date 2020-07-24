@@ -135,11 +135,11 @@ describe('RemoveLast', () => {
 	})
 })
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
 	test('adds to the end of the list', () => {
 		const l = new List()
 		l.insertFirst('a')
-
+		console.log('l', l)
 		l.insertLast('b')
 
 		expect(l.size()).toEqual(2)

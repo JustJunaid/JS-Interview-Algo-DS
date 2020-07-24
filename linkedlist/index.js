@@ -41,8 +41,6 @@ class LinkedList {
 			if (node.next === null) return node
 			node = node.next
 		}
-
-		return node
 	}
 
 	clear() {
@@ -55,16 +53,25 @@ class LinkedList {
 		this.head = this.head.next
 	}
 
-	// removeLast() {
-	// 	if (!this.head) return null
-	// 	let previous = this.head
-	// 	let node = this.head.next
-	// 	while (previous) {
-	// 		previous.next = null
-	// 		if (node.next === null) {
-	// 			nod
-	// 		}
-	// 	}
+	removeLast() {
+		if (!this.head) return null
+		if (!this.head.next) {
+			this.head = null
+			return
+		}
+		let previous = this.head
+		let node = this.head.next
+		while (node.next) {
+			previous = node
+			node = node.next
+		}
+		previous.next = null
+	}
+
+	// insertLast(data) {
+	// 	const last = this.getLast()
+	// 	console.log('last', last)
+	// 	last.next = data
 	// }
 }
 
