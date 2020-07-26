@@ -85,6 +85,16 @@ class LinkedList {
 		}
 		return null
 	}
+
+	removeAt(index) {
+		let node = this.head
+		let previousToPreviosNode = this.head.next.next
+		let counter = 0
+
+		while (node) {
+			if (counter === index) previousToPreviosNode = node
+		}
+	}
 }
 
 module.exports = { Node, LinkedList }
