@@ -88,13 +88,22 @@ class LinkedList {
 
 	removeAt(index) {
 		let node = this.head
-		let previousToPreviosNode = this.head.next.next
-		let counter = 0
-
-		while (node) {
-			if (counter === index) previousToPreviosNode = node
+		if (!node) return
+		if (index === 0) {
+			this.head = this.head.next
+			return
 		}
+		// this.getAt(index - 1).next = this.getAt(index + 1)
+		let previous = this.getAt(index - 1)
+		previous.next = previous.next.next
 	}
 }
+
+const l = new LinkedList()
+l.insertLast(1)
+l.insertLast(2)
+l.insertLast(3)
+l.insertLast(4)
+l.removeAt(0)
 
 module.exports = { Node, LinkedList }
